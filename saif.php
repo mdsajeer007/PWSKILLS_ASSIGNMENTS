@@ -1,3 +1,28 @@
+CREATE DATABASE weekly_planner;
+USE weekly_planner;
+
+CREATE TABLE departments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    department_id INT,
+    name VARCHAR(50),
+    day1 INT DEFAULT 0,
+    day2 INT DEFAULT 0,
+    day3 INT DEFAULT 0,
+    day4 INT DEFAULT 0,
+    day5 INT DEFAULT 0,
+    day6 INT DEFAULT 0,
+    day7 INT DEFAULT 0,
+    FOREIGN KEY (department_id) REFERENCES departments(id)
+);
+
+
+
+
 <?php
 // ==================== DATABASE CONNECTION ====================
 $host = "localhost";
